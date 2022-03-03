@@ -1,0 +1,348 @@
+<html>
+<header>
+    <title>Shop</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</header>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item  header__navbar-item--separate">
+                            <a href="" class="category-item__link">Trang chủ</a>
+
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--has-notify">
+                            <a href="https://www.facebook.com/profile.php?id=100009417868387" class="header__navbar-item-link">
+                                <i class="header__navbar-icon "></i>
+                                Liên hệ
+                            </a>
+
+                        </li>
+                    </ul>
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-notify">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-bell"></i>
+                                Giới thiệu
+                            </a>
+                            <div class="header__notify">
+                                <header class="header__notify-header">
+                                    <h3>Chào mừng đến với website bán sách</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="header__notify-footer">
+                                </footer>
+
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate" id="dk" onclick="formdk();">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--strong"onclick="formdn();" id ="dn">Đăng nhập</li>
+                        <li class="header__navbar-item header__navbar-item--strong header_logout" id="dx" onclick="logout();">Đăng xuất</li>
+                    </ul>
+                </nav>
+                <div class="header-with-search">
+                    <div class="header__logo">
+                        <a href="" class="header__logo-link">
+                        </a>
+                    </div>
+
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" id="search_web"placeholder="Nhập để tìm kiếm sản phẩm">
+                        </div>
+                        <button onclick="searchdata();" class="header__search-btn">
+                            <i class="header__search-btn-icon fas fa-search"></i>
+                        </button>
+
+                    </div>
+                    <div class="header__cart" id="cart">
+                        <div class="header__cart-wrap">
+                            <a href="giohang.html"><i class="header__cart-icon fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="container">
+                <div class="app__container">
+                    <div class="grid">
+                        <div class="grid__row app__content">
+                            <div class="grid__column-2-1">
+                                <nav class="category">
+                                    <h3 class="category__heading">
+                                        <i class="category__heading-icon"></i>Danh mục
+                                    </h3>
+
+                                    <ul class="category-list classifyProduct" id="categoryMenu">
+                                        <li id="demo" onclick="showDRM()" class="category-item">
+                                            <a class="category-item__link">Doraemon</a>
+                                        </li>
+                                        <li id="demo" onclick="showOP()" class="category-item">
+                                            <a class="category-item__link">One Piece</a>
+                                        </li>
+                                        <li id="demo" onclick="showCN()" class="category-item">
+                                            <a class="category-item__link">Conan</a>
+                                        </li>
+                                    </ul>
+                                   
+                                </nav>
+                            </div>
+
+                            <div class="grid__column-10">
+                                <div class="home-product">
+                                    <div class="grid__row allProduct" id="product">
+                                    </div>
+                                    <div class="grid__row" id="DRM">
+                                    </div>
+                                </div>
+                                <div class="content__paging">
+                                    <div class="page">
+                                        <ul>
+                                            <li class="btn-prev btn-active fas fa-angle-left"></li>
+                                            <div class="number-page" id="number-page">
+                                            </div>
+                                            <li class="btn-next fas fa-angle-right"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    </div>
+    <div class="modal js-modal">
+        <div class="app">
+            <div class="content">
+                <div class="container">
+                    <div class="grid details js-modal-container">
+                        <div class="modal-close js-modal-close">
+                            <i class="fas fa-times"></i>
+                    </div>
+                        <div class="grid__column-2 flex">
+                            <div>
+                                <img class="details__img"
+                                    src="https://product.hstatic.net/1000376556/product/1_cfd6c989ded24309adb209a765442a1f_large.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="grid__column-2">
+                            <div class="m10">
+                                <div class="details__title">ONE PIECE TẬP 1</div>
+                                <span class="details__code">Mã sản phẩm: OP1</span>
+                                <div class="details__price">
+                                    <span class="details__price-current">17,550₫</span>
+                                    <del class="details__price-old">19,500₫</del>
+                                </div>
+                                <span class="details__save">Tiết kiệm được:10%</span>
+                                <div class="details__wrap">
+                                    <label>Tiêu đề</label>
+                                    <div class="face">
+                                        <span>[Bìa Rời]</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="quantity">
+                                        <label>Số lượng</label>
+                                        <div>
+                                            <input type="button" value="-" class="btn__reduce-add">
+                                            <input type="text" id="number" value="1">
+                                            <input type="button" value="+" class="btn__reduce-add">
+                                        </div>
+                                    </div>
+    
+                                    <div>
+                                        <button class="reserve">ĐẶT TRƯỚC</button>
+                                        <button class="reserve" onclick="themspvaogiohang();">THÊM VÀO GIỎ</button>
+                                    </div>
+                                    <div class="information-more">
+                                        <strong>Ưu đãi dành riêng cho khách hàng đặt trước Online:</strong>
+                                        <ul class="details__infomation">
+                                            <li><i class="fa fa-check"></i> Có thể nhận hàng tại shop.</li>
+                                            <li><i class="fa fa-check"></i> Giao hàng toàn quốc. Thời gian giao hàng từ 3 -
+                                                7 ngày </li>
+                                            <li><i class="fa fa-check"></i> Bọc plastic miễn phí cho đặt mua
+                                                trước ngày phát hành dự kiến.</li>
+                                            <li><i class="fa fa-check"></i> Tặng bao bảo vệ cho mọi sản phẩm.</li>
+                                            <li><i class="fa fa-check"></i> Đổi trả trong 30 ngày.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="dangky">
+        <div class="formdangky">
+            <button class="daux" onclick="dongform();"><a href="#">X</a></button>
+            <div class="header_form">
+                <h3>Đăng ký</h3>
+            </div>
+            <div class="center_form">
+                <label for="user">Tên đăng nhập</label>
+                <input class="form_text"type="text" name="name"  id="user" placeholder="Nhập tên đăng nhập">
+                <br>
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu " class="form_text"> <br>
+                <label for="passworkretype">Nhập lại mật khẩu</label>
+                <input class="form_text" type="password" id="passwordretype" placeholder="Nhập lại mật khẩu">   
+               <button id="list_form" class="form_text button_dk" onclick="createnewuser();">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+    <div id="dangnhap">
+        <div class="formdangky dangnhapform">
+            <button class="daux" onclick="dongformdn();"><a href="#">X</a></button>
+            <div class="header_form">
+                <h3>Đăng nhập</h3>
+            </div>
+            <div class="center_form">
+                <label for="user1">Tên đăng nhập</label>
+                <input class="form_text"type="text" name="name"  id="user1" placeholder="Nhập tên đăng nhập">
+                <br>
+                <label for="password1">Mật khẩu</label>
+                <input type="password" id="password1" placeholder="Nhập mật khẩu " class="form_text"> <br>  
+               <button id="list_form" class="form_text button_dk" onclick="login();">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+  
+    <script src="test.js"></script>
+    <script src="main.js"></script> 
+    <script src="code.js"></script>
+    <script src="taikhoan.js"></script>
+    <script src="timkiem.js"></script>
+    <script src="themspvaogiohang.js"></script>
+    <script src="ctsp.js"></script>
+    <!-- <script src="sanpham.js"></script> -->
+    <script>
+        //hiển thị chi tiết sản phẩm
+        const buyBtns = document.querySelectorAll('.js__show-details')
+        const modal = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
+        const modalClose = document.querySelector('.js-modal-close')
+        function showDetails() {
+            modal.classList.add('open')
+        }
+        function hideDetails() {
+            modal.classList.remove('open')
+        }
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showDetails)
+        }
+        modalClose.addEventListener('click', hideDetails)
+
+        modal.addEventListener('click', hideDetails)
+
+        modalContainer.addEventListener('click', function () {
+            event.stopPropagation();
+        })
+
+        //phân loại
+        const show = document.querySelector('.classifyProduct')
+        const hide = document.querySelector('.allProduct')
+        function hideProduct() {
+            hide.classList.add('close')
+        }
+        show.addEventListener('click', hideProduct)
+
+    </script>
+    
+    <script>
+        const a = document.querySelector('#dangky');
+        function formdk() {
+            a.classList.add('open');
+        }
+        function dongform() {
+            a.classList.remove('open');
+        }
+        const b = document.querySelector('#dangnhap');
+        function formdn() {
+            b.classList.add('open');
+        }
+        function dongformdn() {
+            b.classList.remove('open');
+        }
+    </script>
+    <script>
+        //timkiemsanpham
+        function searchdata() {
+            var timkiem = document.getElementById('search_web');
+            var nodetimkiem = timkiem.value;
+            console.log("san pham tim kiem: "+nodetimkiem);
+
+            var sanpham = truyxuattheoten(nodetimkiem);
+            console.log(sanpham);
+            
+            var HTML = chuyenthanhhtml(sanpham);
+            console.log(HTML);
+
+            var ketqua = document.getElementById('product');
+            ketqua.innerHTML = HTML;
+        }
+    </script>
+    <script>
+         function themspvaogiohang(id){
+            alert('them san pham vao gio hang'+id);
+            var danhsachitemgiohang = laydanhsachitemgiohang();
+            var cotontai = false;
+            for(var i = 0; i<danhsachitemgiohang.length;i++){
+                var itemgiohanghientai = danhsachitemgiohang[i];
+                if(itemgiohanghientai.id ==id) {
+                    danhsachitemgiohang[i].soluong++;
+                    cotontai = true;
+                }
+            }
+            if(cotontai==false) {
+                var itemgiohang = taodoituonggiohang(id,1);
+                danhsachitemgiohang.push(itemgiohang);
+            }
+            luuvao(danhsachitemgiohang);
+        }
+    </script>
+    <!-- <script>
+        // them san pham vao giao dien
+        var jsdanhsachsanpham = localStorage.getItem('products');
+        var danhsachsanpham = JSON.parse(jsdanhsachsanpham);
+         console.log(danhsachsanpham);
+
+        //  var HTML = chuyendanhsachthanhhtml(danhsachsanpham);
+
+        // var nodeproduct = document.getElementById('product');
+        // nodeproduct.innerHTML = HTML;
+    </script> -->
+    <script>
+        ///chi tiet san pham
+        function chitietsanpham(id) {
+            window.location='ctsp.html';
+            // alert('chi tiet'+id);
+            var danhsachchitietsanpham = laydanhsachitiet();
+            var chitietsanpham = taodoituongchitiet(id);
+            danhsachchitietsanpham.push(chitietsanpham);
+            luutruchitiet(danhsachchitietsanpham);
+        }
+    </script>
+</body>
+
+</html>
